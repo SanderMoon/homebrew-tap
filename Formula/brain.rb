@@ -5,7 +5,7 @@
 class Brain < Formula
   desc "Local Brain - A personal knowledge management CLI tool"
   homepage "https://github.com/SanderMoon/local-brain"
-  version "1.0.1"
+  version "1.0.2"
   license "MIT"
 
   depends_on "bat" => :optional
@@ -16,64 +16,44 @@ class Brain < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.0.1/local-brain_1.0.1_Darwin_x86_64.tar.gz"
-      sha256 "18f2676e81016466c45ec2374dc9244d4fe7d9ff660e8cef2bb779784198e061"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.0.2/local-brain_1.0.2_Darwin_x86_64.tar.gz"
+      sha256 "a980a098cfb31ba24f856fc5a1b601cbae8eaeb6feea0a9a3227329ae8dce0eb"
 
       def install
         bin.install "brain"
         # Install the shell prompt helper
         (share/"brain").install "lib/brain-prompt.sh"
-
-        # Generate shell completions
-        bash_completion.install "completions/brain.bash" => "brain"
-        zsh_completion.install "completions/_brain" => "_brain"
-        fish_completion.install "completions/brain.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.0.1/local-brain_1.0.1_Darwin_arm64.tar.gz"
-      sha256 "45bdcf0f91ff42e40e45db982fdf33868635018b1fec986a3b6a776143b427f8"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.0.2/local-brain_1.0.2_Darwin_arm64.tar.gz"
+      sha256 "b1917e11eac659b2ad46466c03d0cbe18ebd8a33665ba8f26debfd03c071de05"
 
       def install
         bin.install "brain"
         # Install the shell prompt helper
         (share/"brain").install "lib/brain-prompt.sh"
-
-        # Generate shell completions
-        bash_completion.install "completions/brain.bash" => "brain"
-        zsh_completion.install "completions/_brain" => "_brain"
-        fish_completion.install "completions/brain.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.0.1/local-brain_1.0.1_Linux_x86_64.tar.gz"
-      sha256 "377b3e9d0a6002c858a178587880e816a2a5adccbaf9a9dc77da808d5e324376"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.0.2/local-brain_1.0.2_Linux_x86_64.tar.gz"
+      sha256 "4ad1327f0f77490c8621cb661b96317c4996a8c9de848f70ed9700090b9970d5"
       def install
         bin.install "brain"
         # Install the shell prompt helper
         (share/"brain").install "lib/brain-prompt.sh"
-
-        # Generate shell completions
-        bash_completion.install "completions/brain.bash" => "brain"
-        zsh_completion.install "completions/_brain" => "_brain"
-        fish_completion.install "completions/brain.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.0.1/local-brain_1.0.1_Linux_arm64.tar.gz"
-      sha256 "600d54c9865938804fa17b43a54d8aefe712da7d7522e537b10b4ca904fbad3e"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.0.2/local-brain_1.0.2_Linux_arm64.tar.gz"
+      sha256 "dc37dc95f743bd2a6db454977367ece17f41b4b14636607ece9671be6c280864"
       def install
         bin.install "brain"
         # Install the shell prompt helper
         (share/"brain").install "lib/brain-prompt.sh"
-
-        # Generate shell completions
-        bash_completion.install "completions/brain.bash" => "brain"
-        zsh_completion.install "completions/_brain" => "_brain"
-        fish_completion.install "completions/brain.fish"
       end
     end
   end
@@ -96,6 +76,6 @@ class Brain < Formula
   end
 
   test do
-    system "#{bin}/brain", "version"
+    system "#{bin}/brain", "--version"
   end
 end
