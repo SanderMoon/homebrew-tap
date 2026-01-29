@@ -5,19 +5,20 @@
 class Brain < Formula
   desc "Local Brain - A personal knowledge management CLI tool"
   homepage "https://github.com/SanderMoon/local-brain"
-  version "1.1.0"
+  version "1.1.1"
   license "MIT"
 
   depends_on "bat" => :optional
-  depends_on "fzf" => :optional
+  depends_on "fzf"
   depends_on "jq" => :optional
-  depends_on "ripgrep" => :optional
+  depends_on "ripgrep"
   depends_on "syncthing" => :optional
+  depends_on "tmux" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.1.0/local-brain_1.1.0_Darwin_x86_64.tar.gz"
-      sha256 "b8e9d35a1ea813c660420ee302bbb7e0b20dd6069716b4585c54757092cce907"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.1.1/local-brain_1.1.1_Darwin_x86_64.tar.gz"
+      sha256 "e0fa570ffcf1738f1099a0999187c96aafe0f6e4978a65ab1b1d570e73224403"
 
       def install
         bin.install "brain"
@@ -26,8 +27,8 @@ class Brain < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.1.0/local-brain_1.1.0_Darwin_arm64.tar.gz"
-      sha256 "57eaffe867e8093ee2e06ca427cfe18d591ecf622cfe48cb6b4ae8b21c30ddc6"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.1.1/local-brain_1.1.1_Darwin_arm64.tar.gz"
+      sha256 "27c2e033357d2c7643ee8e6a79d0f1c5db5bb464a3fbff97f9e46a911c9a8f31"
 
       def install
         bin.install "brain"
@@ -39,8 +40,8 @@ class Brain < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.1.0/local-brain_1.1.0_Linux_x86_64.tar.gz"
-      sha256 "01298dd6bcbcea9fa1509757edda33a5044df101e2a12a6b9df3b6c96fb0255f"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.1.1/local-brain_1.1.1_Linux_x86_64.tar.gz"
+      sha256 "500572b37fe75ace94710613aa238aacbd551f5d71a14654492a6e2fe67b75d6"
       def install
         bin.install "brain"
         # Install the shell prompt helper
@@ -48,8 +49,8 @@ class Brain < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.1.0/local-brain_1.1.0_Linux_arm64.tar.gz"
-      sha256 "072b5582f0f212de923a87ff49dad47ab2fc7c1558e5a4785c9e223a1b48e684"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.1.1/local-brain_1.1.1_Linux_arm64.tar.gz"
+      sha256 "0c2a0d12af2674290ec813ae335d4bd724ec08cf87d7222f7f2d65ff8ad5c2d4"
       def install
         bin.install "brain"
         # Install the shell prompt helper
@@ -68,8 +69,8 @@ class Brain < Formula
       2. Add the brain-prompt.sh to your shell config:
          echo 'source $(brew --prefix)/share/brain/brain-prompt.sh' >> ~/.zshrc
 
-      3. Install dependencies (if not already installed):
-         brew install ripgrep fzf bat syncthing jq
+      3. Optional enhancements:
+         brew install tmux bat syncthing jq
 
       For more information, visit: https://github.com/SanderMoon/local-brain
     EOS
