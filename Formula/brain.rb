@@ -5,7 +5,7 @@
 class Brain < Formula
   desc "Local Brain - A personal knowledge management CLI tool"
   homepage "https://github.com/SanderMoon/local-brain"
-  version "1.7.0"
+  version "1.8.0"
   license "MIT"
 
   depends_on "bat" => :optional
@@ -17,8 +17,8 @@ class Brain < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.7.0/local-brain_1.7.0_Darwin_x86_64.tar.gz"
-      sha256 "d6c14dbd8f211d976e850448482ab4bd99d45fc61a66b862fd0f2b51a74491d4"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.8.0/local-brain_1.8.0_Darwin_x86_64.tar.gz"
+      sha256 "aa8b102e21c01def2a393546c2cc7fb9b8093d473117426d21999588d3f4c7c2"
 
       def install
         bin.install "brain"
@@ -27,8 +27,8 @@ class Brain < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.7.0/local-brain_1.7.0_Darwin_arm64.tar.gz"
-      sha256 "34812df6cc806539196dd436eb7c2f682fc5b9625e4cb2c69ef430a6c86a7903"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.8.0/local-brain_1.8.0_Darwin_arm64.tar.gz"
+      sha256 "384c0f6ad88164ea670260a2a08a8abb425a9917a3be6a5d2e21bd064aa31127"
 
       def install
         bin.install "brain"
@@ -40,8 +40,8 @@ class Brain < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.7.0/local-brain_1.7.0_Linux_x86_64.tar.gz"
-      sha256 "1593c0d7c8a3d104332b3e3824efc70e558f986076c77b3d4781a89566aabcf8"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.8.0/local-brain_1.8.0_Linux_x86_64.tar.gz"
+      sha256 "0ad5c18ca1dd1f7aeaea423b998dc51997aaf30cafc8d48c81dc93a833ba3c8f"
       def install
         bin.install "brain"
         # Install the shell prompt helper
@@ -49,8 +49,8 @@ class Brain < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.7.0/local-brain_1.7.0_Linux_arm64.tar.gz"
-      sha256 "d932b45dbd164cb011ee2827960edab25c498e633d6ba0d8ece58cf4eb06c6a8"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.8.0/local-brain_1.8.0_Linux_arm64.tar.gz"
+      sha256 "492750a1bb88722460b22d987167064a5d1ecd4ab5f7e87786fcf259eabf446b"
       def install
         bin.install "brain"
         # Install the shell prompt helper
