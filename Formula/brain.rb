@@ -5,7 +5,7 @@
 class Brain < Formula
   desc "Local Brain - A personal knowledge management CLI tool"
   homepage "https://github.com/SanderMoon/local-brain"
-  version "1.9.0"
+  version "1.2.0"
   license "MIT"
 
   depends_on "bat" => :optional
@@ -17,23 +17,21 @@ class Brain < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.9.0/local-brain_1.9.0_Darwin_x86_64.tar.gz"
-      sha256 "0d28fc10b77c9ff5c6c7f3397446e8ca0e5887238cbb3818f01c28abdf6c3e46"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.2.0/local-brain_1.2.0_Darwin_x86_64.tar.gz"
+      sha256 "9e80adf7542e09845e1010f9f73b16d8445b58f3cffa1409629c3c3446744203"
 
       def install
         bin.install "brain"
-        bin.install "brain-mcp"
         # Install the shell prompt helper
         (share/"brain").install "lib/brain-prompt.sh"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.9.0/local-brain_1.9.0_Darwin_arm64.tar.gz"
-      sha256 "a8e0f188d5c84df00556179cf7b6d579296fbeecda0d8344dee1c1b2e5372ac4"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.2.0/local-brain_1.2.0_Darwin_arm64.tar.gz"
+      sha256 "2b8dc8742e596a5411250792d564d9108e68a796fa38e2609c94646997308420"
 
       def install
         bin.install "brain"
-        bin.install "brain-mcp"
         # Install the shell prompt helper
         (share/"brain").install "lib/brain-prompt.sh"
       end
@@ -42,21 +40,19 @@ class Brain < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.9.0/local-brain_1.9.0_Linux_x86_64.tar.gz"
-      sha256 "e01cabc86d9bc92dbd1b790c62fd57b7cfd6618824f40c1cfbb1be8379039802"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.2.0/local-brain_1.2.0_Linux_x86_64.tar.gz"
+      sha256 "1b72ecfe4a2a05327cee18802ea824c35b9612e2d80284b70e74962a12446d2c"
       def install
         bin.install "brain"
-        bin.install "brain-mcp"
         # Install the shell prompt helper
         (share/"brain").install "lib/brain-prompt.sh"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.9.0/local-brain_1.9.0_Linux_arm64.tar.gz"
-      sha256 "6736dab113cbce705e2c7c8e357d0a20ced556f7a0bbde7a5f8478efbc0229d8"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.2.0/local-brain_1.2.0_Linux_arm64.tar.gz"
+      sha256 "39e1d96a03fbd5a9fa71d1770cc7c8da4a61c080136cc26b79ef71f0986a8c49"
       def install
         bin.install "brain"
-        bin.install "brain-mcp"
         # Install the shell prompt helper
         (share/"brain").install "lib/brain-prompt.sh"
       end
@@ -73,18 +69,7 @@ class Brain < Formula
       2. Add the brain-prompt.sh to your shell config:
          echo 'source $(brew --prefix)/share/brain/brain-prompt.sh' >> ~/.zshrc
 
-      3. Optional: Enable Claude Desktop integration
-         The MCP server (brain-mcp) is installed for Claude Desktop integration.
-         Add to ~/Library/Application Support/Claude/claude_desktop_config.json:
-         {
-           "mcpServers": {
-             "local-brain": {
-               "command": "#{bin}/brain-mcp"
-             }
-           }
-         }
-
-      4. Optional enhancements:
+      3. Optional enhancements:
          brew install tmux bat syncthing jq
 
       For more information, visit: https://github.com/SanderMoon/local-brain
