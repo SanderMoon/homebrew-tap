@@ -5,7 +5,7 @@
 class Brain < Formula
   desc "Local Brain - A personal knowledge management CLI tool"
   homepage "https://github.com/SanderMoon/local-brain"
-  version "1.17.0"
+  version "1.17.1"
   license "MIT"
 
   depends_on "bat" => :optional
@@ -17,8 +17,8 @@ class Brain < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.17.0/local-brain_1.17.0_Darwin_x86_64.tar.gz"
-      sha256 "b023396637ddbb1347745ba515116eb48ed65d949bbb4795502855eb7c9437a9"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.17.1/local-brain_1.17.1_Darwin_x86_64.tar.gz"
+      sha256 "a9a4626252b45f879c3e65dda1e55bf0f85dbc8e07b72df72939234f34a69e5d"
 
       define_method(:install) do
         bin.install "brain"
@@ -28,8 +28,8 @@ class Brain < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.17.0/local-brain_1.17.0_Darwin_arm64.tar.gz"
-      sha256 "37cf3c88635f7deea9d696414eba6f7eef9f695867ec71ef0ec983ae3dfaf38c"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.17.1/local-brain_1.17.1_Darwin_arm64.tar.gz"
+      sha256 "517eccead060352bf29685b53d6b00d19b2f02cee65ed5f4961254ae64be726d"
 
       define_method(:install) do
         bin.install "brain"
@@ -42,8 +42,8 @@ class Brain < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.17.0/local-brain_1.17.0_Linux_x86_64.tar.gz"
-      sha256 "c224d51e8fe6adab5ed00db9180eef0d8f127c85fdb302494255d4d58ac09dff"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.17.1/local-brain_1.17.1_Linux_x86_64.tar.gz"
+      sha256 "8311ee1997d39d6ace362b1b5f566d6219a0e84cfdcaaeb1aa611b0f6debeb27"
       define_method(:install) do
         bin.install "brain"
         bin.install "brain-mcp"
@@ -52,8 +52,8 @@ class Brain < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SanderMoon/local-brain/releases/download/v1.17.0/local-brain_1.17.0_Linux_arm64.tar.gz"
-      sha256 "57ce824fa1e1ba81f7ed1678774b8b8f830c6e9c4f988812bebb73016cb21813"
+      url "https://github.com/SanderMoon/local-brain/releases/download/v1.17.1/local-brain_1.17.1_Linux_arm64.tar.gz"
+      sha256 "48b6b708c9e23b6644a308601f93a441078ade80be27070bd3360e0d16916f17"
       define_method(:install) do
         bin.install "brain"
         bin.install "brain-mcp"
